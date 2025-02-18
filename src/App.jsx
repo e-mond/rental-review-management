@@ -1,10 +1,28 @@
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About.jsx";
+import Contact from "./pages/Contact";
+import Login from "./pages/Login";
+import "./index.css"; 
 
 function App() {
   return (
-    <div className="text-center">
-      <h1 class="text-5xl font-bold underline text-red-500">Hello world!</h1>
-    </div>
+    <>
+      <Navbar />
+
+      <main className="min-h-screen">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </main>
+
+      <Footer />
+    </>
   );
 }
 
